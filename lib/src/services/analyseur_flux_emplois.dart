@@ -37,11 +37,11 @@ class AnalyseurFluxEmplois {
       // Étape 3 : Transformer en liste d'OffreEmploi
       final offresEmploi = _transformerEnOffres(fluxRss);
       
-      print('✅ ${offresEmploi.length} offres d\'emploi récupérées avec succès');
+      print("✅ ${offresEmploi.length} offres d'emploi récupérées avec succès");
       return offresEmploi;
       
     } catch (erreur) {
-      print('❌ Erreur lors de l\'analyse du flux : $erreur');
+      print("❌ Erreur lors de l'analyse du flux : $erreur");
       // En cas d'erreur, on retourne une liste vide plutôt que de planter
       return [];
     }
@@ -94,7 +94,7 @@ class AnalyseurFluxEmplois {
         final offre = OffreEmploi.depuisRssItem(item);
         offres.add(offre);
       } catch (erreur) {
-        print('⚠️ Erreur lors de la transformation d\'un item : $erreur');
+        print("⚠️ Erreur lors de la transformation d'un item : $erreur");
         // On continue avec les autres items même si un pose problème
         continue;
       }
@@ -127,7 +127,7 @@ class AnalyseurFluxEmplois {
       return offres;
       
     } catch (erreur) {
-      print('❌ Erreur avec l\'URL $urlFlux : $erreur');
+      print("❌ Erreur avec l'URL $urlFlux : $erreur");
       return [];
     }
   }
